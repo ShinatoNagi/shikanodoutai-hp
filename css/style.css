@@ -1,4 +1,54 @@
 @charset "UTF-8";
+/* 共通クラス */
+.inner {
+  padding: 0 50px;
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.heading {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 5px;
+  width: 100%;
+  padding-bottom: 10px;
+  margin-bottom: 30px;
+  position: relative;
+}
+.heading::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: rgba(160, 160, 160, 0.5);
+  border-radius: 20px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.heading-icon {
+  margin-top: 5px;
+}
+.heading-icon img {
+  width: 20px;
+  height: 20px;
+}
+
+.heading-text {
+  cursor: default;
+  font-size: 22px;
+  letter-spacing: 0.5px;
+}
+
 /* 全体 */
 html {
   scroll-behavior: smooth;
@@ -80,56 +130,6 @@ body {
           transform: scale(1, 1);
 }
 
-/* 共通クラス */
-.inner {
-  padding: 0 50px;
-  max-width: 500px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.heading {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: left;
-      -ms-flex-pack: left;
-          justify-content: left;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 5px;
-  width: 100%;
-  padding-bottom: 10px;
-  margin-bottom: 30px;
-  position: relative;
-}
-.heading::after {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 2px;
-  background-color: rgba(160, 160, 160, 0.5);
-  border-radius: 20px;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-}
-
-.heading-icon {
-  margin-top: 5px;
-}
-.heading-icon img {
-  width: 20px;
-  height: 20px;
-}
-
-.heading-text {
-  cursor: default;
-  font-size: 22px;
-  letter-spacing: 0.5px;
-}
-
 .x img {
   padding: 2px;
 }
@@ -138,23 +138,23 @@ body {
 /* carousel */
 .carousel {
   margin-top: 121px;
-  padding: 40px 0;
+  padding-bottom: 40px;
   background-color: #fefbfb;
 }
 
-.carousel-contents {
-  border: 1px solid rgba(160, 160, 160, 0.5);
-  border-radius: 10px;
+.carousel__inner {
+  padding-right: 20px;
+  padding-left: 20px;
 }
 
-.carousel-img img {
+.swiper-slide img {
   width: 100%;
   display: inline-block;
   aspect-ratio: 3/4;
   vertical-align: bottom;
   -o-object-fit: contain;
      object-fit: contain;
-  margin: 10px 15px;
+  margin-top: 10px;
 }
 
 /* illust */

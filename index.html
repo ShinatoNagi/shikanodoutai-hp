@@ -6,11 +6,11 @@
     <!-- レスポンシブ表示 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- ファビコン -->
-    <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+    <link rel="shortcut icon" href="./img/cmn/favicon.svg" type="image/svg+xml">
     <!-- サイトのタイトル -->
     <title>イラスト｜鹿の胴体</title>
     <!-- サイトの概要 -->
-    <meta name="description" content="鹿の胴体/Shika No DoutaiのHP。これまでに作成したイラストの掲載をしています！">
+    <meta name="description" content="鹿の胴体/Shika No DoutaiのHP これまでに作成したイラストの掲載をしています！">
 
     <!-- GoogleFonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,6 +25,10 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js" type="text/javascript"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
     <!--カルーセル-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.css">
@@ -55,14 +59,24 @@
     <!-- carousel -->
     <div class="carousel">
       <!-- 幅設定 -->
-      <div class="inner">
-        <div class="carousel-contents">
-          <div class="carousel-img slider">
-            <img src="./img/2022/2022.10.14天使降臨.jpg" alt="天使降臨">
-            <img src="./img/2023/2023.2.23「無月」の頂 $スザーク$.jpg" alt="$スザーク$">
-            <img src="./img/2023/2023.3.7奇天烈シャッフ.jpg" alt="奇天烈シャッフ">
-            <img src="./img/2023/2023.9.16獅子神レオナはメガネが似合うらしい.jpg" alt="獅子神レオナ-メガネ">
-            <img src="./img/2023/2023.9.22選ばれないから余裕ぶっこいてるレイクポーチャーParZero.jpg" alt="ParZero">
+      <div class="carousel__inner inner">
+        <div class="swiper carousel__content">
+          <div class="swiper-wrapper carousel__slider">
+            <div class="swiper-slide">
+              <img src="./img/2022/2022.10.14天使降臨.jpg" alt="天使降臨">
+            </div>
+            <div class="swiper-slide">
+              <img src="./img/2023/2023.2.23「無月」の頂 $スザーク$.jpg" alt="$スザーク$">
+            </div>
+            <div class="swiper-slide">
+              <img src="./img/2023/2023.3.7奇天烈シャッフ.jpg" alt="奇天烈シャッフ">
+            </div>
+            <div class="swiper-slide">
+              <img src="./img/2023/2023.9.16獅子神レオナはメガネが似合うらしい.jpg" alt="獅子神レオナ-メガネ">
+            </div>
+            <div class="swiper-slide">
+              <img src="./img/2023/2023.9.22選ばれないから余裕ぶっこいてるレイクポーチャーParZero.jpg" alt="ParZero">
+            </div>
           </div>
         </div>
       </div>
@@ -76,7 +90,7 @@
           <span class="illust__heading-icon heading-icon">
             <img src="./img/cmn/heading.png" alt="" width="20px" height="20px">
           </span>
-          <span class="heading-text">作品</span>
+          <span class="illust__heading-text heading-text">作品</span>
         </h2>
         <!-- illustコンテンツ -->
         <div class="illust__content">
@@ -198,7 +212,7 @@
     </footer>
     <!--カルーセル-->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <script src="./js/script-i.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./js/swiper.js"></script>
   </body>
 </html>
