@@ -5,12 +5,13 @@
     <meta charset="UTF-8">
     <!-- レスポンシブ表示 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Shinato Nagi">
     <!-- ファビコン -->
     <link rel="shortcut icon" href="./img/cmn/favicon.svg" type="image/svg+xml">
     <!-- サイトのタイトル -->
     <title>イラスト｜鹿の胴体</title>
     <!-- サイトの概要 -->
-    <meta name="description" content="鹿の胴体/Shika No DoutaiのHP これまでに作成したイラストの掲載をしています！">
+    <meta name="description" content="鹿の胴体/Shika No Doutaiのポートフォリオ兼ホームページです！これまでに作成したイラストを掲載をしています。是非、ゆっくりご覧になられて下さい">
 
     <!-- GoogleFonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,17 +22,8 @@
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/style.css">
     <!--javascript-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js" type="text/javascript"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
-    <!--カルーセル-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
   </head>
   <body>
     <!-- ヘッダー -->
@@ -41,25 +33,44 @@
           <img src="./img/cmn/鹿の胴体_ロゴ_透過.png" alt="鹿の胴体" width="200px" height="90px">
         </h1>
         <!-- ナビゲーションタブ -->
-        <nav class="header__nav">
+        <nav class="header__nav hide-sp">
           <ul class="header__nav-list">
             <li class="header__nav-item">
-              <a href="#" class="header__nav-link is-curr">Home</a>
+              <a href="#" class="header__nav-link is-active">Home</a>
             </li>
             <li class="header__nav-item">
               <a href="./profile.html" class="header__nav-link">Profile</a>
             </li>
-            <li class="header-nav-item">
+            <li class="header__nav-item">
               <a href="./gallery.html" class="header__nav-link">Gallery</a>
             </li>
           </ul>
         </nav>
+        <!-- ハンバーガーメニュー -->
+        <div class="header__drawer hide-pc" id="js-drawer-icon">
+          <span class="header__drawer-bar"></span>
+          <span class="header__drawer-bar"></span>
+          <span class="header__drawer-bar"></span>
+        </div>
       </div>
     </header>
+    <div class="drawer" id="drawer">
+      <ul class="drawer-menu">
+        <li class="drawer-item">
+          <a href="#" class="drawer-link is-active">Home</a>
+        </li>
+        <li class="drawer-item">
+          <a href="#" class="drawer-link">Profile</a>
+        </li>
+        <li class="drawer-item">
+          <a href="./gallery.html" class="drawer-link">Gallery</a>
+        </li>
+      </ul>
+    </div>
     <!-- carousel -->
-    <div class="carousel">
+    <div class="carousel section">
       <!-- 幅設定 -->
-      <div class="carousel__inner inner">
+      <div class="carousel__inner">
         <div class="swiper carousel__content">
           <div class="swiper-wrapper carousel__slider">
             <div class="swiper-slide">
@@ -81,19 +92,129 @@
         </div>
       </div>
     </div>
-    <!-- illustセクション -->
-    <section class="illust">
-      <!-- 幅設定 -->
-      <div class="illust__inner inner">
+    <!-- profileセクション -->
+    <section class="profile section">
+      <div class="profile__inner section__inner">
         <!-- 見出し -->
-        <h2 class="illust__heading heading">
-          <span class="illust__heading-icon heading-icon">
+        <h2 class="section__heading">
+          <span class="section__heading-icon">
             <img src="./img/cmn/heading.png" alt="" width="20px" height="20px">
           </span>
-          <span class="illust__heading-text heading-text">作品</span>
+          <span class="section__heading-text">About</span>
+        </h2>
+        <!-- profileコンテンツ -->
+        <div class="profile__content section__content">
+          <div class="profile__content-main">
+            <!-- プロフ画像 -->
+            <div class="profile__item">
+              <div class="profile__img">
+                <img src="./img/2023/2023.7.14うちのこ.jpg" alt="プロフ画像">
+              </div>
+            </div>
+            <!-- テキスト -->
+            <div class="profile__item">
+              <div class="profile__text-wrapper">
+                <h3 class="profile__name">鹿の胴体 / Shika No Doutai</h3>
+                <div class="profile__desc">
+                  <p class="profile__text">趣味で絵を描く甘党</p>
+                  <div class="profile__text-container">
+                    <dl class="profile__text-content">
+                      <dt class="profile__text-title">生年月日：</dt>
+                      <dd class="profile__text-desc">2003年4月28日</dd>
+                    </dl>
+                    <dl class="profile__text-content">
+                      <dt class="profile__text-title">性別：</dt>
+                      <dd class="profile__text-desc">男</dd>
+                    </dl>
+                  </div>
+                  <div class="profile__text-container">
+                    <dl class="profile__text-content">
+                      <dt class="profile__text-title">趣味：</dt>
+                      <dd class="profile__text-desc">デュエル・マスターズ, カラオケ, 漫画を読むこと</dd>
+                    </dl>
+                  </div>
+                  <div class="profile__text-container">
+                    <dl class="profile__text-content">
+                      <dt class="profile__text-title">好きなもの：</dt>
+                      <dd class="profile__text-desc">甘いもの, 馬刺し, ボーカロイド</dd>
+                    </dl>
+                  </div>
+                  <div class="profile__text-container">
+                    <dl class="profile__text-content">
+                      <dt class="profile__text-title">夢：</dt>
+                      <dd class="profile__text-desc">VTuberやデュエル・マスターズの公式イラスト作成の仕事をお受けすること</dd>
+                    </dl>
+                  </div>
+                </div>
+                <div class="profile__desc">
+                  <p class="profile__text">制作物について：</p>
+                  <div class="profile__text-container">
+                    <dl class="profile__text-content">
+                      <dt class="profile__text-title">作風①：</dt>
+                      <dd class="profile__text-desc">人型の女性キャラ, デフォルメイラスト<span><a href="./gallery.html" class="profile__text-link">（詳しくは過去作品参照）</a>
+                        </span>
+                      </dd>
+                    </dl>
+                    <dl class="profile__text-content">
+                      <dt class="profile__text-title">作風②：</dt>
+                      <dd class="profile__text-desc">１枚絵</dd>
+                    </dl>
+                  </div>
+                  <div class="profile__text-container">
+                    <dl class="profile__text-content">
+                      <dt class="profile__text-title">使用機材：</dt>
+                      <dd class="profile__text-desc">iPad, Ibis paint</dd>
+                    </dl>
+                    <dl class="profile__text-content">
+                      <dt class="profile__text-title">描くもの：</dt>
+                      <dd class="profile__text-desc">VTuberやデュエル・マスターズの二次創作</dd>
+                    </dl>
+                  </div>
+                  <div class="profile__text-container">
+                    <dl class="profile__text-content">
+                      <dt class="profile__text-title">依頼について：</dt>
+                      <dd class="profile__text-desc">現在、受け付けておりません</dd>
+                    </dl>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- SNS link -->
+          <div class="profile__sns-wrapper">
+            <h3 class="profile__sns-heading">～ 各種SNSはこちら ～</h3>
+            <ul class="profile__sns-list">
+              <li class="profile__sns-item">
+                <a href="https://x.com/shikanodoutai" target="_blank" rel="noopener" class="profile__sns-link x">
+                  <img src="./img/cmn/x_logo.png" alt="x link" class="profile__sns-icon" width="24px" height="24px">
+                  <p class="profile__sns-text">: 日常やイラスト</p>
+                </a>
+              </li>
+              <li class="profile__sns-item">
+                <a href="https://www.pixiv.net/users/46735621" target="_blank" rel="noopener" class="profile__sns-link">
+                  <img src="./img/cmn/pixiv_logo.png" alt="pixiv link" class="profile__sns-icon" width="24px" height="24px">
+                  <p class="profile__sns-text">: 過去の作品</p>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- illustセクション -->
+    <section class="illust section">
+      <!-- 幅設定 -->
+      <div class="illust__inner section__inner">
+        <!-- 見出し -->
+        <h2 class="illust__heading section__heading">
+          <span class="illust__heading-icon section__heading-icon">
+            <img src="./img/cmn/heading.png" alt="" width="20px" height="20px">
+          </span>
+          <span class="illust__heading-text section__heading-text">Works</span>
         </h2>
         <!-- illustコンテンツ -->
-        <div class="illust__content">
+        <div class="illust__content section__content">
           <ul class="illust__list">
             <li class="illust__list-item">
               <div class="illust__list-img">
@@ -187,6 +308,7 @@
         </div>
       </div>
     </section>
+
     <!-- フッター -->
     <footer class="footer">
       <div class="footer__inner">
@@ -205,14 +327,16 @@
             </li>
           </ul>
         </div>
-      </div>
-      <div class="footer__copyright">
-        <small class="copyright">&copy;Shinato Nagi</small>
+        <div class="footer__copyright">
+          <small class="copyright">&copy;Shinato Nagi &amp; Shika No Doutai</small>
+        </div>
       </div>
     </footer>
     <!--カルーセル-->
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js" type="text/javascript"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./js/script-i.js"></script>
     <script src="./js/swiper.js"></script>
   </body>
 </html>
