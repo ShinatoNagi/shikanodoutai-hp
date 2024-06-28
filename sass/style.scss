@@ -39,7 +39,7 @@ body {
   display: none !important;
 }
 .section {
-  padding-top: 30px;
+  padding-top: 60px;
   padding-bottom: 60px;
 }
 .section__inner {
@@ -64,12 +64,12 @@ body {
   margin-top: 5px;
 
   img {
-    width: 24px;
-    height: 24px;
+    width: 26px;
+    height: 26px;
   }
 }
 .section__heading-text {
-  font-size: 28px;
+  font-size: 32px;
   letter-spacing: 0.05em;
 }
 .section__content {
@@ -245,8 +245,8 @@ body {
 /* トップページ */
 /* carousel */
 .carousel {
-  margin-top: calc(90px - 30px);
-  height: calc(100vh - 60px);
+  margin-top: calc(90px - 60px);
+  height: calc(100vh - 30px);
   background-color: #fefbfb;
 
   @include mq(pc) {
