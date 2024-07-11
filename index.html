@@ -2,44 +2,65 @@
 <html lang="ja">
   <head>
     <!-- 文字コード -->
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <!-- レスポンシブ表示 -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Shinato Nagi">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Shinato Nagi" />
     <!-- ファビコン -->
-    <link rel="shortcut icon" href="./img/cmn/favicon.svg" type="image/svg+xml">
+    <link
+      rel="shortcut icon"
+      href="./img/cmn/favicon.svg"
+      type="image/svg+xml"
+    />
     <!-- サイトのタイトル -->
     <title>イラスト｜鹿の胴体</title>
     <!-- サイトの概要 -->
-    <meta name="description" content="鹿の胴体/Shika No Doutaiのポートフォリオ兼ホームページです！これまでに作成したイラストを掲載をしています。是非、ゆっくりご覧になられて下さい">
+    <meta
+      name="description"
+      content="鹿の胴体/Shika No Doutaiのポートフォリオ兼ホームページです！これまでに作成したイラストを掲載をしています。是非、ゆっくりご覧になられて下さい"
+    />
 
     <!-- GoogleFonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Klee+One:wght@600&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Klee+One:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora&display=swap"
+      rel="stylesheet"
+    />
     <!-- css -->
-    <link rel="stylesheet" href="./css/reset.css">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/style.css" />
     <!--javascript-->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
   </head>
   <body>
     <!-- ヘッダー -->
     <header class="header">
       <div class="header__inner">
         <h1 class="header__logo">
-          <img src="./img/cmn/鹿の胴体_ロゴ_透過.png" alt="鹿の胴体" width="200px" height="90px">
+          <img
+            src="./img/cmn/鹿の胴体_ロゴ_透過.png"
+            alt="鹿の胴体"
+            width="200px"
+            height="90px"
+          />
         </h1>
         <!-- ナビゲーションタブ -->
         <nav class="header__nav hide-sp">
           <ul class="header__nav-list">
             <li class="header__nav-item">
               <a href="#" class="header__nav-link is-active">Home</a>
-            </li>
-            <li class="header__nav-item">
-              <a href="./profile.html" class="header__nav-link">Profile</a>
             </li>
             <li class="header__nav-item">
               <a href="./gallery.html" class="header__nav-link">Gallery</a>
@@ -55,286 +76,481 @@
       </div>
     </header>
     <div class="drawer" id="drawer">
-      <ul class="drawer-menu">
-        <li class="drawer-item">
-          <a href="#" class="drawer-link is-active">Home</a>
-        </li>
-        <li class="drawer-item">
-          <a href="#" class="drawer-link">Profile</a>
-        </li>
-        <li class="drawer-item">
-          <a href="./gallery.html" class="drawer-link">Gallery</a>
-        </li>
-      </ul>
+      <div class="drawer-menu">
+        <div class="drawer-menu-title">Home</div>
+        <ul class="drawer-list">
+          <li class="drawer-item">
+            <a href="#" class="drawer-link">Page Top</a>
+          </li>
+          <li class="drawer-item">
+            <a href="#profile" class="drawer-link">Profile</a>
+          </li>
+          <li class="drawer-item">
+            <a href="#work" class="drawer-link">Work</a>
+          </li>
+        </ul>
+      </div>
+      <div class="drawer-menu">
+        <div class="drawer-menu-title">&nbsp;Gallery&nbsp;</div>
+        <ul class="drawer-list">
+          <li class="drawer-item">
+            <a href="./gallery.html" class="drawer-link">Page Top</a>
+          </li>
+        </ul>
+      </div>
     </div>
     <!-- carousel -->
-    <div class="carousel section">
-      <!-- 幅設定 -->
-      <div class="carousel__inner">
-        <div class="swiper carousel__content">
-          <div class="swiper-wrapper carousel__slider">
-            <div class="swiper-slide">
-              <img src="./img/2022/2022.10.14天使降臨.jpg" alt="天使降臨">
-            </div>
-            <div class="swiper-slide">
-              <img src="./img/2023/2023.2.23「無月」の頂 $スザーク$.jpg" alt="$スザーク$">
-            </div>
-            <div class="swiper-slide">
-              <img src="./img/2023/2023.3.7奇天烈シャッフ.jpg" alt="奇天烈シャッフ">
-            </div>
-            <div class="swiper-slide">
-              <img src="./img/2023/2023.9.16獅子神レオナはメガネが似合うらしい.jpg" alt="獅子神レオナ-メガネ">
-            </div>
-            <div class="swiper-slide">
-              <img src="./img/2023/2023.9.22選ばれないから余裕ぶっこいてるレイクポーチャーParZero.jpg" alt="ParZero">
+    <main>
+      <div class="carousel section">
+        <!-- 幅設定 -->
+        <div class="carousel__inner">
+          <div class="swiper carousel__content">
+            <div class="swiper-wrapper carousel__slider">
+              <div class="swiper-slide">
+                <img src="./img/2022/2022.10.14天使降臨.jpg" alt="天使降臨" />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="./img/2023/2023.2.23「無月」の頂 $スザーク$.jpg"
+                  alt="$スザーク$"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="./img/2023/2023.3.7奇天烈シャッフ.jpg"
+                  alt="奇天烈シャッフ"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="./img/2023/2023.9.16獅子神レオナはメガネが似合うらしい.jpg"
+                  alt="獅子神レオナ-メガネ"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="./img/2023/2023.9.22選ばれないから余裕ぶっこいてるレイクポーチャーParZero.jpg"
+                  alt="ParZero"
+                />
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <!-- profileセクション -->
-    <section class="profile section">
-      <div class="profile__inner section__inner">
-        <!-- 見出し -->
-        <h2 class="section__heading">
-          <span class="section__heading-icon">
-            <img src="./img/cmn/heading.png" alt="" width="20px" height="20px">
-          </span>
-          <span class="section__heading-text">About</span>
-        </h2>
-        <!-- profileコンテンツ -->
-        <div class="profile__content section__content">
-          <div class="profile__content-main">
-            <!-- プロフ画像 -->
-            <div class="profile__item">
-              <div class="profile__img">
-                <img src="./img/2023/2023.7.14うちのこ.jpg" alt="プロフ画像">
+      <!-- profileセクション -->
+      <section class="profile section" id="profile">
+        <div class="profile__inner section__inner">
+          <!-- 見出し -->
+          <h2 class="section__heading">
+            <span class="section__heading-icon">
+              <img
+                src="./img/cmn/heading.png"
+                alt=""
+                width="20px"
+                height="20px"
+              />
+            </span>
+            <span class="section__heading-text">Profile</span>
+          </h2>
+          <!-- profileコンテンツ -->
+          <div class="profile__content section__content">
+            <div class="profile__content-main">
+              <!-- プロフ画像 -->
+              <div class="profile__item">
+                <div class="profile__img">
+                  <img
+                    src="./img/2023/2023.7.14うちのこ.jpg"
+                    alt="プロフ画像"
+                  />
+                </div>
+              </div>
+              <!-- テキスト -->
+              <div class="profile__item">
+                <div class="profile__text-wrapper">
+                  <h3 class="profile__name">鹿の胴体 / Shika No Doutai</h3>
+                  <div class="profile__desc">
+                    <p class="profile__text">趣味で絵を描く甘党</p>
+                    <div class="profile__text-container">
+                      <dl class="profile__text-content">
+                        <dt class="profile__text-title">生年月日：</dt>
+                        <dd class="profile__text-desc">2003年4月28日</dd>
+                      </dl>
+                      <dl class="profile__text-content">
+                        <dt class="profile__text-title">性別：</dt>
+                        <dd class="profile__text-desc">男</dd>
+                      </dl>
+                    </div>
+                    <div class="profile__text-container">
+                      <dl class="profile__text-content">
+                        <dt class="profile__text-title">趣味：</dt>
+                        <dd class="profile__text-desc">
+                          デュエル・マスターズ, カラオケ, 漫画を読むこと
+                        </dd>
+                      </dl>
+                    </div>
+                    <div class="profile__text-container">
+                      <dl class="profile__text-content">
+                        <dt class="profile__text-title">好きなもの：</dt>
+                        <dd class="profile__text-desc">
+                          甘いもの, 馬刺し, ボーカロイド
+                        </dd>
+                      </dl>
+                    </div>
+                    <div class="profile__text-container">
+                      <dl class="profile__text-content">
+                        <dt class="profile__text-title">夢：</dt>
+                        <dd class="profile__text-desc">
+                          VTuberやデュエル・マスターズの公式イラスト作成の仕事をお受けすること
+                        </dd>
+                      </dl>
+                    </div>
+                  </div>
+                  <div class="profile__desc">
+                    <p class="profile__text">制作物について：</p>
+                    <div class="profile__text-container">
+                      <dl class="profile__text-content">
+                        <dt class="profile__text-title">作風①：</dt>
+                        <dd class="profile__text-desc">
+                          人型の女性キャラ, デフォルメイラスト<span
+                            ><a href="./gallery.html" class="profile__text-link"
+                              >（詳しくは過去作品参照）</a
+                            >
+                          </span>
+                        </dd>
+                      </dl>
+                      <dl class="profile__text-content">
+                        <dt class="profile__text-title">作風②：</dt>
+                        <dd class="profile__text-desc">１枚絵</dd>
+                      </dl>
+                    </div>
+                    <div class="profile__text-container">
+                      <dl class="profile__text-content">
+                        <dt class="profile__text-title">使用機材：</dt>
+                        <dd class="profile__text-desc">iPad, Ibis paint</dd>
+                      </dl>
+                      <dl class="profile__text-content">
+                        <dt class="profile__text-title">描くもの：</dt>
+                        <dd class="profile__text-desc">
+                          VTuberやデュエル・マスターズの二次創作
+                        </dd>
+                      </dl>
+                    </div>
+                    <div class="profile__text-container">
+                      <dl class="profile__text-content">
+                        <dt class="profile__text-title">依頼について：</dt>
+                        <dd class="profile__text-desc">
+                          現在、受け付けておりません
+                        </dd>
+                      </dl>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-            <!-- テキスト -->
-            <div class="profile__item">
-              <div class="profile__text-wrapper">
-                <h3 class="profile__name">鹿の胴体 / Shika No Doutai</h3>
-                <div class="profile__desc">
-                  <p class="profile__text">趣味で絵を描く甘党</p>
-                  <div class="profile__text-container">
-                    <dl class="profile__text-content">
-                      <dt class="profile__text-title">生年月日：</dt>
-                      <dd class="profile__text-desc">2003年4月28日</dd>
-                    </dl>
-                    <dl class="profile__text-content">
-                      <dt class="profile__text-title">性別：</dt>
-                      <dd class="profile__text-desc">男</dd>
-                    </dl>
-                  </div>
-                  <div class="profile__text-container">
-                    <dl class="profile__text-content">
-                      <dt class="profile__text-title">趣味：</dt>
-                      <dd class="profile__text-desc">デュエル・マスターズ, カラオケ, 漫画を読むこと</dd>
-                    </dl>
-                  </div>
-                  <div class="profile__text-container">
-                    <dl class="profile__text-content">
-                      <dt class="profile__text-title">好きなもの：</dt>
-                      <dd class="profile__text-desc">甘いもの, 馬刺し, ボーカロイド</dd>
-                    </dl>
-                  </div>
-                  <div class="profile__text-container">
-                    <dl class="profile__text-content">
-                      <dt class="profile__text-title">夢：</dt>
-                      <dd class="profile__text-desc">VTuberやデュエル・マスターズの公式イラスト作成の仕事をお受けすること</dd>
-                    </dl>
-                  </div>
-                </div>
-                <div class="profile__desc">
-                  <p class="profile__text">制作物について：</p>
-                  <div class="profile__text-container">
-                    <dl class="profile__text-content">
-                      <dt class="profile__text-title">作風①：</dt>
-                      <dd class="profile__text-desc">人型の女性キャラ, デフォルメイラスト<span><a href="./gallery.html" class="profile__text-link">（詳しくは過去作品参照）</a>
-                        </span>
-                      </dd>
-                    </dl>
-                    <dl class="profile__text-content">
-                      <dt class="profile__text-title">作風②：</dt>
-                      <dd class="profile__text-desc">１枚絵</dd>
-                    </dl>
-                  </div>
-                  <div class="profile__text-container">
-                    <dl class="profile__text-content">
-                      <dt class="profile__text-title">使用機材：</dt>
-                      <dd class="profile__text-desc">iPad, Ibis paint</dd>
-                    </dl>
-                    <dl class="profile__text-content">
-                      <dt class="profile__text-title">描くもの：</dt>
-                      <dd class="profile__text-desc">VTuberやデュエル・マスターズの二次創作</dd>
-                    </dl>
-                  </div>
-                  <div class="profile__text-container">
-                    <dl class="profile__text-content">
-                      <dt class="profile__text-title">依頼について：</dt>
-                      <dd class="profile__text-desc">現在、受け付けておりません</dd>
-                    </dl>
-                  </div>
-                </div>
-              </div>
+            <!-- SNS link -->
+            <div class="profile__sns-wrapper">
+              <h3 class="profile__sns-heading">～ 各種SNSはこちら ～</h3>
+              <ul class="profile__sns-list">
+                <li class="profile__sns-item">
+                  <a
+                    href="https://x.com/shikanodoutai"
+                    target="_blank"
+                    rel="noopener"
+                    class="profile__sns-link x"
+                  >
+                    <img
+                      src="./img/cmn/x_logo.png"
+                      alt="x link"
+                      class="profile__sns-icon"
+                      width="24px"
+                      height="24px"
+                    />
+                    <p class="profile__sns-text">: 日常やイラスト</p>
+                  </a>
+                </li>
+                <li class="profile__sns-item">
+                  <a
+                    href="https://www.pixiv.net/users/46735621"
+                    target="_blank"
+                    rel="noopener"
+                    class="profile__sns-link"
+                  >
+                    <img
+                      src="./img/cmn/pixiv_logo.png"
+                      alt="pixiv link"
+                      class="profile__sns-icon"
+                      width="24px"
+                      height="24px"
+                    />
+                    <p class="profile__sns-text">: 過去の作品</p>
+                  </a>
+                </li>
+              </ul>
             </div>
           </div>
-          <!-- SNS link -->
-          <div class="profile__sns-wrapper">
-            <h3 class="profile__sns-heading">～ 各種SNSはこちら ～</h3>
-            <ul class="profile__sns-list">
-              <li class="profile__sns-item">
-                <a href="https://x.com/shikanodoutai" target="_blank" rel="noopener" class="profile__sns-link x">
-                  <img src="./img/cmn/x_logo.png" alt="x link" class="profile__sns-icon" width="24px" height="24px">
-                  <p class="profile__sns-text">: 日常やイラスト</p>
+        </div>
+      </section>
+
+      <!-- workセクション -->
+      <section class="work section" id="work">
+        <!-- 幅設定 -->
+        <div class="work__inner section__inner">
+          <!-- 見出し -->
+          <h2 class="work__heading section__heading">
+            <span class="work__heading-icon section__heading-icon">
+              <img
+                src="./img/cmn/heading.png"
+                alt=""
+                width="20px"
+                height="20px"
+              />
+            </span>
+            <span class="work__heading-text section__heading-text">Work</span>
+          </h2>
+          <!-- workコンテンツ -->
+          <div class="work__content section__content">
+            <ul class="work__list">
+              <li class="work__list-item">
+                <div class="work__list-img">
+                  <a
+                    href="./img/2022/2022.10.14天使降臨.jpg"
+                    data-lightbox="work"
+                    title="<p class='work-desc'>2022.10.14</p>"
+                  >
+                    <img
+                      src="./img/2022/2022.10.14天使降臨.jpg"
+                      alt="天使降臨"
+                      title=""
+                    />
+                  </a>
+                </div>
+              </li>
+              <li class="work__list-item">
+                <div class="work__list-img">
+                  <a
+                    href="./img/2023/2023.2.23「無月」の頂 $スザーク$.jpg"
+                    data-lightbox="work"
+                    title="<p class='work-desc'>2023.2.23</p>"
+                  >
+                    <img
+                      src="./img/2023/2023.2.23「無月」の頂 $スザーク$.jpg"
+                      alt="$スザーク$"
+                      title=""
+                    />
+                  </a>
+                </div>
+              </li>
+              <li class="work__list-item">
+                <div class="work__list-img">
+                  <a
+                    href="./img/2023/2023.3.7奇天烈シャッフ.jpg"
+                    data-lightbox="work"
+                    title="<p class='work-desc'>2023.3.7</p>"
+                  >
+                    <img
+                      src="./img/2023/2023.3.7奇天烈シャッフ.jpg"
+                      alt="奇天烈シャッフ"
+                      title=""
+                    />
+                  </a>
+                </div>
+              </li>
+              <li class="work__list-item">
+                <div class="work__list-img">
+                  <a
+                    href="./img/2023/2023.9.16獅子神レオナはメガネが似合うらしい.jpg"
+                    data-lightbox="work"
+                    title="<p class='work-desc'>2023.9.16</p>"
+                  >
+                    <img
+                      src="./img/2023/2023.9.16獅子神レオナはメガネが似合うらしい.jpg"
+                      alt="獅子神レオナ-メガネ"
+                      title=""
+                    />
+                  </a>
+                </div>
+              </li>
+              <li class="work__list-item">
+                <div class="work__list-img">
+                  <a
+                    href="./img/2023/2023.9.22選ばれないから余裕ぶっこいてるレイクポーチャーParZero.jpg"
+                    data-lightbox="work"
+                    title="<p class='work-desc'>2023.9.22</p>"
+                  >
+                    <img
+                      src="./img/2023/2023.9.22選ばれないから余裕ぶっこいてるレイクポーチャーParZero.jpg"
+                      alt="ParZero"
+                      title=""
+                    />
+                  </a>
+                </div>
+              </li>
+              <li class="work__list-item">
+                <div class="work__list-img">
+                  <a
+                    href="./img/2021/2021.5.3ヒビキ〈タジャドル.star〉.jpg"
+                    data-lightbox="work"
+                    title="<p class='work-desc'>2021.5.3</p>"
+                  >
+                    <img
+                      src="./img/2021/2021.5.3ヒビキ〈タジャドル.star〉.jpg"
+                      alt="ヒビキ-タジャドル"
+                      title=""
+                    />
+                  </a>
+                </div>
+              </li>
+              <li class="work__list-item">
+                <div class="work__list-img">
+                  <a
+                    href="./img/2022/2022.9.15ラプラス・ダークネス×パーフェクト・ダークネス.jpg"
+                    data-lightbox="work"
+                    title="<p class='work-desc'>2022.9.15</p>"
+                  >
+                    <img
+                      src="./img/2022/2022.9.15ラプラス・ダークネス×パーフェクト・ダークネス.jpg"
+                      alt="ラプラス・ダークネス"
+                      title=""
+                    />
+                  </a>
+                </div>
+              </li>
+              <li class="work__list-item">
+                <div class="work__list-img">
+                  <a
+                    href="./img/2022/2022.12.4魂魄妖夢(東方Project).jpg"
+                    data-lightbox="work"
+                    title="<p class='work-desc'>2022.12.4</p>"
+                  >
+                    <img
+                      src="./img/2022/2022.12.4魂魄妖夢(東方Project).jpg"
+                      alt="魂魄妖夢"
+                      title=""
+                    />
+                  </a>
+                </div>
+              </li>
+              <li class="work__list-item">
+                <div class="work__list-img">
+                  <a
+                    href="./img/2023/2023.2.16ジャスミンちゃん.jpg"
+                    data-lightbox="work"
+                    title="<p class='work-desc'>2023.2.16</p>"
+                  >
+                    <img
+                      src="./img/2023/2023.2.16ジャスミンちゃん.jpg"
+                      alt="ジャスミン"
+                      title=""
+                    />
+                  </a>
+                </div>
+              </li>
+              <li class="work__list-item">
+                <div class="work__list-img">
+                  <a
+                    href="./img/2023/2023.7.14うちのこ.jpg"
+                    data-lightbox="work"
+                    title="<p class='work-desc'>2023.7.14</p>"
+                  >
+                    <img
+                      src="./img/2023/2023.7.14うちのこ.jpg"
+                      alt="うちのこ"
+                      title=""
+                    />
+                  </a>
+                </div>
+              </li>
+              <li class="work__list-item">
+                <div class="work__list-img">
+                  <a
+                    href="./img/2023/2023.8.22邪幽 ジャガイスト.jpg"
+                    data-lightbox="work"
+                    title="<p class='work-desc'>2023.8.22</p>"
+                  >
+                    <img
+                      src="./img/2023/2023.8.22邪幽 ジャガイスト.jpg"
+                      alt="ジャガイスト"
+                      title=""
+                    />
+                  </a>
+                </div>
+              </li>
+              <li class="work__list-item">
+                <div class="work__list-img">
+                  <a
+                    href="./img/2023/2023.12.5ラフルル・ラブ！！！.jpg"
+                    data-lightbox="work"
+                    title="<p class='work-desc'>2023.12.5</p>"
+                  >
+                    <img
+                      src="./img/2023/2023.12.5ラフルル・ラブ！！！.jpg"
+                      alt="ラフルル・ラブ"
+                      title=""
+                    />
+                  </a>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <!-- ボタン -> Gallery.html -->
+          <div class="work__button">
+            <a href="./gallery.html" class="work__btn-link">See More</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- フッター -->
+      <footer class="footer">
+        <div class="footer__inner">
+          <div class="footer__content">
+            <div class="footer__logo">鹿の胴体</div>
+            <ul class="footer__list">
+              <li class="footer__list-item">
+                <a
+                  href="https://x.com/shikanodoutai"
+                  target="_blank"
+                  rel="noopener"
+                  class="footer__list-link x"
+                >
+                  <img
+                    src="./img/cmn/x_logo.png"
+                    alt="x"
+                    width="20px"
+                    height="20px"
+                  />
                 </a>
               </li>
-              <li class="profile__sns-item">
-                <a href="https://www.pixiv.net/users/46735621" target="_blank" rel="noopener" class="profile__sns-link">
-                  <img src="./img/cmn/pixiv_logo.png" alt="pixiv link" class="profile__sns-icon" width="24px" height="24px">
-                  <p class="profile__sns-text">: 過去の作品</p>
+              <li class="footer__list-item">
+                <a
+                  href="https://www.pixiv.net/users/46735621"
+                  target="_blank"
+                  rel="noopener"
+                  class="footer__list-link"
+                >
+                  <img
+                    src="./img/cmn/pixiv_logo.png"
+                    alt="pixiv link"
+                    width="20px"
+                    height="20px"
+                  />
                 </a>
               </li>
             </ul>
           </div>
+          <div class="footer__copyright">
+            <small class="copyright"
+              >&copy;Shinato Nagi &amp; Shika No Doutai</small
+            >
+          </div>
         </div>
-      </div>
-    </section>
-
-    <!-- illustセクション -->
-    <section class="illust section">
-      <!-- 幅設定 -->
-      <div class="illust__inner section__inner">
-        <!-- 見出し -->
-        <h2 class="illust__heading section__heading">
-          <span class="illust__heading-icon section__heading-icon">
-            <img src="./img/cmn/heading.png" alt="" width="20px" height="20px">
-          </span>
-          <span class="illust__heading-text section__heading-text">Works</span>
-        </h2>
-        <!-- illustコンテンツ -->
-        <div class="illust__content section__content">
-          <ul class="illust__list">
-            <li class="illust__list-item">
-              <div class="illust__list-img">
-                <a href="./img/2022/2022.10.14天使降臨.jpg" data-lightbox="illust" title="<p class='illust-desc'>2022.10.14</p>">
-                  <img src="./img/2022/2022.10.14天使降臨.jpg" alt="天使降臨" title="">
-                </a>
-              </div>
-            </li>
-            <li class="illust__list-item">
-              <div class="illust__list-img">
-                <a href="./img/2023/2023.2.23「無月」の頂 $スザーク$.jpg" data-lightbox="illust" title="<p class='illust-desc'>2023.2.23</p>">
-                  <img src="./img/2023/2023.2.23「無月」の頂 $スザーク$.jpg" alt="$スザーク$" title="">
-                </a>
-              </div>
-            </li>
-            <li class="illust__list-item">
-              <div class="illust__list-img">
-                <a href="./img/2023/2023.3.7奇天烈シャッフ.jpg" data-lightbox="illust" title="<p class='illust-desc'>2023.3.7</p>">
-                  <img src="./img/2023/2023.3.7奇天烈シャッフ.jpg" alt="奇天烈シャッフ" title="">
-                </a>
-              </div>
-            </li>
-            <li class="illust__list-item">
-              <div class="illust__list-img">
-                <a href="./img/2023/2023.9.16獅子神レオナはメガネが似合うらしい.jpg" data-lightbox="illust" title="<p class='illust-desc'>2023.9.16</p>">
-                  <img src="./img/2023/2023.9.16獅子神レオナはメガネが似合うらしい.jpg" alt="獅子神レオナ-メガネ" title="">
-                </a>
-              </div>
-            </li>
-            <li class="illust__list-item">
-              <div class="illust__list-img">
-                <a href="./img/2023/2023.9.22選ばれないから余裕ぶっこいてるレイクポーチャーParZero.jpg" data-lightbox="illust" title="<p class='illust-desc'>2023.9.22</p>">
-                  <img src="./img/2023/2023.9.22選ばれないから余裕ぶっこいてるレイクポーチャーParZero.jpg" alt="ParZero" title="">
-                </a>
-              </div>
-            </li>
-            <li class="illust__list-item">
-              <div class="illust__list-img">
-                <a href="./img/2021/2021.5.3ヒビキ〈タジャドル.star〉.jpg" data-lightbox="illust" title="<p class='illust-desc'>2021.5.3</p>">
-                  <img src="./img/2021/2021.5.3ヒビキ〈タジャドル.star〉.jpg" alt="ヒビキ-タジャドル" title="">
-                </a>
-              </div>
-            </li>
-            <li class="illust__list-item">
-              <div class="illust__list-img">
-                <a href="./img/2022/2022.9.15ラプラス・ダークネス×パーフェクト・ダークネス.jpg" data-lightbox="illust" title="<p class='illust-desc'>2022.9.15</p>">
-                  <img src="./img/2022/2022.9.15ラプラス・ダークネス×パーフェクト・ダークネス.jpg" alt="ラプラス・ダークネス" title="">
-                </a>
-              </div>
-            </li>
-            <li class="illust__list-item">
-              <div class="illust__list-img">
-                <a href="./img/2022/2022.12.4魂魄妖夢(東方Project).jpg" data-lightbox="illust" title="<p class='illust-desc'>2022.12.4</p>">
-                  <img src="./img/2022/2022.12.4魂魄妖夢(東方Project).jpg" alt="魂魄妖夢" title="">
-                </a>
-              </div>
-            </li>
-            <li class="illust__list-item">
-              <div class="illust__list-img">
-                <a href="./img/2023/2023.2.16ジャスミンちゃん.jpg" data-lightbox="illust" title="<p class='illust-desc'>2023.2.16</p>">
-                  <img src="./img/2023/2023.2.16ジャスミンちゃん.jpg" alt="ジャスミン" title="">
-                </a>
-              </div>
-            </li>
-            <li class="illust__list-item">
-              <div class="illust__list-img">
-                <a href="./img/2023/2023.7.14うちのこ.jpg" data-lightbox="illust" title="<p class='illust-desc'>2023.7.14</p>">
-                  <img src="./img/2023/2023.7.14うちのこ.jpg" alt="うちのこ" title="">
-                </a>
-              </div>
-            </li>
-            <li class="illust__list-item">
-              <div class="illust__list-img">
-                <a href="./img/2023/2023.8.22邪幽 ジャガイスト.jpg" data-lightbox="illust" title="<p class='illust-desc'>2023.8.22</p>">
-                  <img src="./img/2023/2023.8.22邪幽 ジャガイスト.jpg" alt="ジャガイスト" title="">
-                </a>
-              </div>
-            </li>
-            <li class="illust__list-item">
-              <div class="illust__list-img">
-                <a href="./img/2023/2023.12.5ラフルル・ラブ！！！.jpg" data-lightbox="illust" title="<p class='illust-desc'>2023.12.5</p>">
-                  <img src="./img/2023/2023.12.5ラフルル・ラブ！！！.jpg" alt="ラフルル・ラブ" title="">
-                </a>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <!-- ボタン -> Gallery.html -->
-        <div class="illust__button">
-          <a href="./gallery.html" class="illust__btn-link">See More</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- フッター -->
-    <footer class="footer">
-      <div class="footer__inner">
-        <div class="footer__content">
-          <div class="footer__logo">鹿の胴体</div>
-          <ul class="footer__list">
-            <li class="footer__list-item">
-              <a href="https://x.com/shikanodoutai" target="_blank" rel="noopener" class="footer__list-link x">
-                <img src="./img/cmn/x_logo.png" alt="x" width="20px" height="20px">
-              </a>
-            </li>
-            <li class="footer__list-item">
-              <a href="https://www.pixiv.net/users/46735621" target="_blank" rel="noopener" class="footer__list-link">
-                <img src="./img/cmn/pixiv_logo.png" alt="pixiv link" width="20px" height="20px">
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div class="footer__copyright">
-          <small class="copyright">&copy;Shinato Nagi &amp; Shika No Doutai</small>
-        </div>
-      </div>
-    </footer>
+      </footer>
+    </main>
     <!--カルーセル-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js" type="text/javascript"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js"
+      type="text/javascript"
+    ></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="./js/script-i.js"></script>
     <script src="./js/swiper.js"></script>
