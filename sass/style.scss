@@ -15,7 +15,7 @@ html {
 body {
   font-family: 'Lora', 'Klee One', serif;
 
-  &.is-open {
+  &.is-fixed {
     overflow: hidden;
   }
 }
@@ -102,6 +102,11 @@ main {
   padding-top: 10px;
   padding-bottom: 10px;
   border-bottom: 1px solid rgba(160, 160, 160, 0.7);
+
+  &.is-open {
+    opacity: 0.5;
+    transition: opacity 0.5s;
+  }
 
   @include mq(pc) {
     padding: 20px 0;
@@ -198,7 +203,7 @@ main {
   height: 2px;
   left: 0;
   background: #333  ;
-  border-radius: 2px;
+  border-radius: 1px;
   transition: transform 0.5s, top 0.5s;
 
   &:nth-child(1) {
@@ -241,7 +246,6 @@ main {
 .drawer-menu-title {
   display: block;
   position: relative;
-  cursor: pointer;
   font-size: 23px;
   padding-right: 20px;
   padding-left: 20px;
@@ -271,6 +275,8 @@ main {
   font-size: 18px;
   padding: 10px 20px;
   text-align: center;
+  cursor: pointer;
+  -webkit-tap-highlight-color:rgba(0,0,0,0);
 }
 .drawer-link {
 
@@ -462,6 +468,110 @@ main {
     background-color: rgba(100, 100, 100, 0.9);
   }
 }
+
+.modal-bg {
+  position: fixed;
+  width: 0;
+  height: 0;
+  top: 0;
+  left: 0;
+  z-index: 29;
+  background: none;
+  transition: background-color 0.5s;
+
+  &.is-open {
+    width: 100%;
+    height: 100vh;
+  }
+
+  &.is-active {
+    background: rgba(0, 0, 0, 0.7);
+  }
+}
+.image-modal {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  z-index: 30;
+  top: 0;
+  left: 0;
+  padding-top: 50px;
+  background: none;
+
+  &.is-active {
+    display: block;
+  }
+}
+
+.image-modal__inner {
+  padding-right: 25px;
+  padding-left: 25px;
+  text-align: center;
+}
+
+.image-modal__content {
+}
+
+.image-modal__img {
+  position: relative;
+  margin-top: 30px;
+  width: 100%;
+
+  img {
+    width: 100%;
+    border-radius: 10px;
+  }
+}
+
+.image-modal__close {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+.image-modal__close-btn {
+  display: none;
+  position: relative;
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  cursor: pointer;
+  -webkit-tap-highlight-color:rgba(0,0,0,0);
+  background: rgba(0, 0, 0, 0.7);
+
+  &.is-active {
+    display: block;
+  }
+}
+
+.image-modal__close-bar {
+  position: absolute;
+  right: 0;
+  content: "";
+  width: 100%;
+  height: 3px;
+  border-radius: 1px;
+  background: #fff;
+
+  &:nth-child(1) {
+    top: 13px;
+    transform: rotate(45deg);
+  }
+
+  &:nth-child(2) {
+    top: 13px;
+    transform: rotate(-45deg);
+  }
+}
+
+.image-modal__desc {
+  margin-top: 10px;
+  color: #fff;
+  font-size: 18px;
+}
+
+
 
 /* フッター */
 .footer {
