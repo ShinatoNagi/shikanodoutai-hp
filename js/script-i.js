@@ -40,12 +40,16 @@ workImgs.forEach(workImg =>
         body.classList.add('is-fixed');
         imageModal.classList.add('is-active');
         modalBg.classList.add('is-open');
-        modalBg.classList.add('is-active');
         window.setTimeout(function() {
-            modalImg.setAttribute('src', `${image}`);
-            modalDesc.textContent = `${title} / ${date}`;
-            closeBtn.classList.add('is-active');
-        }, 250);
+            modalBg.classList.add('is-active');
+            window.setTimeout(function() {
+                modalImg.setAttribute('src', `${image}`);
+                closeBtn.classList.add('is-active');
+                window.setTimeout(function() {
+                    modalDesc.textContent = `${title} / ${date}`;
+                }, 10);
+            }, 250);
+        }, 100);
     })
 );
 

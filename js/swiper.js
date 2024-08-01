@@ -1,17 +1,20 @@
 const swiper = new Swiper('.swiper', {
   loop: true,
-  speed: 1500,
+  loopAdditionalSlides: 1,
+  speed: 2000,
   slidesPerView: 1,
-  spaceBetween: 0,
+  spaceBetween: 20,
   centeredSlides: true,
-  effect: 'fade',
-  fadeEffect: {
-    crossFade: true,
-  },
   autoplay: {
-    delay: 7500,
+    delay: 6500,
     disableOnInteraction: false,
     waitForTransition: false,
   },
   allowTouchMove: false,
+  breakpoints: {
+    768: {
+      slidesPerView: 3,
+      spaceBetween: 75,
+    },
+  },
 });
