@@ -1,7 +1,8 @@
 @charset "UTF-8";
 /* 全体 */
-html {
+:root {
   scroll-behavior: smooth;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 /* フォント */
@@ -12,7 +13,7 @@ body.is-fixed {
   overflow: hidden;
 }
 
-main.is-open {
+.main.is-open {
   opacity: 0.5;
   -webkit-transition: opacity 0.5s;
   transition: opacity 0.5s;
@@ -268,7 +269,6 @@ main.is-open {
   height: 20px;
   border-radius: 5px;
   cursor: pointer;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   position: relative;
 }
 .header__drawer.is-open .header__drawer-bar:nth-child(1) {
@@ -374,7 +374,6 @@ main.is-open {
   padding: 10px 20px;
   text-align: center;
   cursor: pointer;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 .drawer-link.is-active {
@@ -789,7 +788,7 @@ main.is-open {
 }
 .image-modal__img img {
   width: 100%;
-  border-radius: 10px;
+  border-radius: 8px;
 }
 @media screen and (min-width: 768px) {
   .image-modal__img img {
@@ -811,7 +810,6 @@ main.is-open {
   height: 30px;
   border-radius: 5px;
   cursor: pointer;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   background: rgba(0, 0, 0, 0.7);
 }
 .image-modal__close-btn.is-active {
@@ -916,19 +914,42 @@ main.is-open {
 
 /* galleryセクション */
 .gallery {
-  margin-top: 121px;
-  padding: 40px 0 80px;
+  margin-top: 60px;
   background-color: #fefbfb;
+  padding-bottom: 90px;
+}
+@media screen and (min-width: 768px) {
+  .gallery {
+    margin-top: 75px;
+    padding-bottom: 120px;
+  }
 }
 
-.gallery-year-wrapper + .gallery-year-wrapper {
-  margin-top: 80px;
+.gallery__content {
+  margin-top: 20px;
+}
+@media screen and (min-width: 768px) {
+  .gallery__content {
+    margin-top: 40px;
+  }
 }
 
-.gallery-year-heading {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+.gallery__year-wrapper:nth-of-type(n + 2) .gallery__year-list {
+  height: 0;
+}
+.gallery__year-wrapper + .gallery__year-wrapper {
+  margin-top: 60px;
+}
+@media screen and (min-width: 768px) {
+  .gallery__year-wrapper + .gallery__year-wrapper {
+    margin-top: 90px;
+  }
+}
+
+.gallery__year-heading {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   -webkit-box-pack: left;
       -ms-flex-pack: left;
           justify-content: left;
@@ -937,49 +958,66 @@ main.is-open {
           align-items: center;
   gap: 5px;
   margin-bottom: 25px;
+  padding-right: 45px;
+  position: relative;
 }
-
-.gallery-year-heading:hover {
+@media screen and (min-width: 768px) {
+  .gallery__year-heading {
+    gap: 10px;
+  }
+}
+.gallery__year-heading::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  right: 5px;
+  width: 10px;
+  height: 10px;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  border-top: 1px solid #000;
+  border-right: 1px solid #000;
+  -webkit-transition: top 0.5s ease, -webkit-transform 0.5s ease;
+  transition: top 0.5s ease, -webkit-transform 0.5s ease;
+  transition: transform 0.5s ease, top 0.5s ease;
+  transition: transform 0.5s ease, top 0.5s ease, -webkit-transform 0.5s ease;
+}
+.gallery__year-heading.is-open::before {
+  top: calc(50% - 5px);
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
+}
+.gallery__year-heading.is-open .gallery__year-list {
+  height: auto;
+}
+.gallery__year-heading:hover {
   cursor: pointer;
 }
 
-.gallery-year-heading-icon img {
+.gallery__year-heading-icon img {
   width: 20px;
   height: 20px;
 }
+@media screen and (min-width: 768px) {
+  .gallery__year-heading-icon img {
+    width: 28px;
+    height: 28px;
+  }
+}
 
-.gallery-year-heading-text {
-  font-size: 18px;
+.gallery__year-heading-text {
+  font-size: 20px;
   letter-spacing: 0.5px;
 }
-
-.gallery-year-heading-menu {
-  position: relative;
-  display: block;
+@media screen and (min-width: 768px) {
+  .gallery__year-heading-text {
+    font-size: 22px;
+  }
 }
 
-.gallery-year-heading-menu::before {
-  content: "";
-  position: absolute;
-  top: 6px;
-  left: 30px;
-  width: 10px;
-  height: 10px;
-  -webkit-transform: translate(-50%, -60%) rotate(-45deg);
-          transform: translate(-50%, -60%) rotate(-45deg);
-  border-top: 1px solid #000;
-  border-right: 1px solid #000;
-  -webkit-transition: 0.3s ease;
-  transition: 0.3s ease;
-}
-
-.gallery-year-heading-open::before {
-  top: -2px;
-  -webkit-transform: translate(-50%, -40%) rotate(135deg);
-          transform: translate(-50%, -40%) rotate(135deg);
-}
-
-.gallery-year-list {
+.gallery__year-list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -988,37 +1026,47 @@ main.is-open {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  overflow: hidden;
+  -webkit-transition: height 1s ease;
+  transition: height 1s ease;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+@media screen and (min-width: 768px) {
+  .gallery__year-list {
+    padding-right: 60px;
+    padding-left: 60px;
+    margin-top: 10px;
+  }
 }
 
-.gallery-year-item {
-  width: 45%;
+.gallery__year-item {
+  width: 46%;
 }
-
-.gallery-year-item:nth-of-type(n+3) {
+@media screen and (min-width: 768px) {
+  .gallery__year-item {
+    width: 27%;
+  }
+}
+.gallery__year-item:nth-of-type(n + 3) {
   margin-top: 30px;
 }
-
-.gallery-year-item img {
+@media screen and (min-width: 768px) {
+  .gallery__year-item:nth-of-type(n + 3) {
+    margin-top: 0;
+  }
+}
+@media screen and (min-width: 768px) {
+  .gallery__year-item:nth-child(n+4) {
+    margin-top: 60px;
+  }
+}
+.gallery__year-item img {
   cursor: default;
   width: 100%;
   aspect-ratio: 1/1;
   -o-object-fit: contain;
      object-fit: contain;
   border: 1px solid rgba(160, 160, 160, 0.5);
-  border-radius: 10px;
-}
-
-/* 画像拡大＆説明文 */
-.work-desc {
-  margin-top: 10px;
-  text-align: center;
-  font-size: 20px;
-  letter-spacing: 1px;
-}
-
-.gallery-year-desc {
-  margin-top: 10px;
-  text-align: center;
-  font-size: 16px;
-  letter-spacing: 1px;
+  border-radius: 8px;
 }
