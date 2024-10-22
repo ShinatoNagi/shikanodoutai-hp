@@ -3,16 +3,96 @@
 :root {
   scroll-behavior: smooth;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  --cl-black: #000;
+  --cl-white: #fff;
+  --cl-light: #fefbfb;
+  --cl-hf: #f0fcfa;
+  --cl-bg-sns: #fff;
+  --cl-drawer: #333;
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --cl-black: #f4f4f4;
+    --cl-white: #383838;
+    --cl-light: #3e3e3e;
+    --cl-hf: #303030;
+    --cl-bg-sns: #e7e7e7;
+    --cl-drawer: #e7e7e7;
+  }
+  img {
+    -webkit-filter: brightness(95%);
+            filter: brightness(95%);
+  }
+  .image-modal__img img {
+    -webkit-filter: brightness(98%);
+            filter: brightness(98%);
+  }
+}
 /* フォント */
 body {
   font-family: "Lora", "Klee One", serif;
+  color: var(--cl-black);
 }
 body.is-fixed {
   overflow: hidden;
 }
 
+.spin {
+  width: 100vw;
+  height: 100vh;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  background-color: var(--cl-light);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+.spin.loaded {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.spin-animation {
+  --size: 50px;
+  --color: currentColor;
+  --animation-timing-function: linear;
+  --animation-duration: 2s;
+  width: var(--size);
+  height: var(--size);
+  -webkit-mask-image: radial-gradient(circle at 50% 50%, transparent calc(var(--size) / 3), var(--cl-black) calc(var(--size) / 3));
+          mask-image: radial-gradient(circle at 50% 50%, transparent calc(var(--size) / 3), var(--cl-black) calc(var(--size) / 3));
+  background-image: conic-gradient(transparent, transparent 135deg, currentColor);
+  border-radius: 50%;
+  -webkit-animation: var(--animation-timing-function) var(--animation-duration) infinite circle-spin-animation;
+          animation: var(--animation-timing-function) var(--animation-duration) infinite circle-spin-animation;
+  position: absolute;
+  top: calc(50% - var(--size) / 2);
+  left: calc(50% - var(--size) / 2);
+}
+
+@-webkit-keyframes circle-spin-animation {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes circle-spin-animation {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
 .main.is-open {
   opacity: 0.5;
   -webkit-transition: opacity 0.5s;
@@ -82,7 +162,7 @@ body.is-fixed {
 }
 @media screen and (min-width: 768px) {
   .section__heading {
-    gap: 10px;
+    gap: 7px;
   }
 }
 
@@ -98,8 +178,8 @@ body.is-fixed {
     margin-top: 3px;
   }
   .section__heading-icon img {
-    width: 28px;
-    height: 28px;
+    width: 29px;
+    height: 29px;
   }
 }
 
@@ -131,7 +211,7 @@ body.is-fixed {
 
 /* ヘッダー */
 .header {
-  background: #f0fcfa;
+  background-color: var(--cl-hf);
   position: fixed;
   top: 0;
   left: 0;
@@ -291,7 +371,7 @@ body.is-fixed {
   width: 100%;
   height: 2px;
   left: 0;
-  background: #333;
+  background-color: var(--cl-drawer);
   border-radius: 1px;
   -webkit-transition: top 0.5s, -webkit-transform 0.5s;
   transition: top 0.5s, -webkit-transform 0.5s;
@@ -313,7 +393,7 @@ body.is-fixed {
   top: -100vh;
   left: 0;
   z-index: 19;
-  background: #fbfffe;
+  background-color: var(--cl-light);
   width: 100%;
   height: calc(100vh - 90px);
   padding-top: 50px;
@@ -343,7 +423,7 @@ body.is-fixed {
 .drawer-menu-title {
   display: block;
   position: relative;
-  font-size: 23px;
+  font-size: 22px;
   padding-right: 20px;
   padding-left: 20px;
 }
@@ -352,7 +432,7 @@ body.is-fixed {
   position: absolute;
   width: 15px;
   height: 1.5px;
-  background: #000;
+  background-color: var(--cl-black);
   border-radius: 1px;
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -394,12 +474,13 @@ body.is-fixed {
 .carousel {
   margin-top: 30px;
   height: calc(100vh - 30px);
-  background-color: #fefbfb;
+  background-color: var(--cl-light);
 }
 @media screen and (min-width: 768px) {
   .carousel {
     margin-top: 45px;
-    padding: 60px 0;
+    padding-top: 60px;
+    padding-bottom: 60px;
     height: calc(100vh - 45px);
   }
 }
@@ -434,7 +515,7 @@ body.is-fixed {
 
 /* profileセクション */
 .profile {
-  background-color: #fff;
+  background-color: var(--cl-white);
 }
 
 @media screen and (min-width: 768px) {
@@ -525,7 +606,7 @@ body.is-fixed {
 
 .profile__text {
   font-size: 18px;
-  letter-spacing: 0.25px;
+  letter-spacing: 0.1px;
 }
 .profile__text + .profile__text {
   margin-top: 8px;
@@ -587,12 +668,7 @@ body.is-fixed {
 
 .profile__sns-heading {
   text-align: center;
-  font-size: 20px;
-}
-@media screen and (min-width: 768px) {
-  .profile__sns-heading {
-    font-size: 22px;
-  }
+  font-size: 22px;
 }
 
 .profile__sns-list {
@@ -641,16 +717,16 @@ body.is-fixed {
      object-fit: contain;
   border: 1px solid rgba(160, 160, 160, 0.5);
   border-radius: 6px;
-  background-color: #fff;
+  background-color: var(--cl-bg-sns);
 }
 
 .profile__sns-text {
-  font-size: 16px;
+  font-size: 15px;
 }
 
 /* work */
 .work {
-  background-color: #fefbfb;
+  background-color: var(--cl-light);
 }
 
 .work__list {
@@ -713,11 +789,11 @@ body.is-fixed {
 .work__btn-link {
   display: inline-block;
   padding: 10px 14px;
-  color: #000;
-  background: #fff;
+  color: var(--cl-black);
+  background-color: var(--cl-white);
   border: 1px solid rgba(100, 100, 100, 0.7);
   border-radius: 8px;
-  font-size: 16px;
+  font-size: 15px;
   -webkit-transition: color 0.5s, background-color 0.5s;
   transition: color 0.5s, background-color 0.5s;
 }
@@ -728,7 +804,7 @@ body.is-fixed {
   }
 }
 .work__btn-link:hover {
-  color: #fefbfb;
+  color: var(--cl-light);
   background-color: rgba(100, 100, 100, 0.9);
 }
 
@@ -739,7 +815,7 @@ body.is-fixed {
   top: 0;
   left: 0;
   z-index: 29;
-  background: none;
+  background-color: none;
   -webkit-transition: background-color 0.5s;
   transition: background-color 0.5s;
 }
@@ -748,7 +824,7 @@ body.is-fixed {
   height: 100vh;
 }
 .modal-bg.is-active {
-  background: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 .image-modal {
@@ -760,7 +836,7 @@ body.is-fixed {
   top: 0;
   left: 0;
   padding-top: 50px;
-  background: none;
+  background-color: none;
 }
 .image-modal.is-active {
   display: block;
@@ -810,7 +886,7 @@ body.is-fixed {
   height: 30px;
   border-radius: 5px;
   cursor: pointer;
-  background: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.7);
 }
 .image-modal__close-btn.is-active {
   display: block;
@@ -823,7 +899,7 @@ body.is-fixed {
   width: 100%;
   height: 3px;
   border-radius: 1px;
-  background: #fff;
+  background-color: #e7e7e7;
 }
 .image-modal__close-bar:nth-child(1) {
   top: 13px;
@@ -838,7 +914,7 @@ body.is-fixed {
 
 .image-modal__desc {
   margin-top: 10px;
-  color: #fff;
+  color: var(--cl-white);
   font-size: 18px;
 }
 @media screen and (min-width: 768px) {
@@ -851,7 +927,7 @@ body.is-fixed {
 /* フッター */
 .footer {
   border-top: 1px solid rgba(160, 160, 160, 0.3);
-  background: #f0fcfa;
+  background-color: var(--cl-hf);
   padding-top: 10px;
   padding-bottom: 10px;
 }
@@ -895,7 +971,7 @@ body.is-fixed {
      object-fit: contain;
   border: 1px solid rgba(160, 160, 160, 0.5);
   border-radius: 5px;
-  background-color: #fff;
+  background-color: var(--cl-bg-sns);
 }
 
 .footer__copyright {
@@ -915,7 +991,7 @@ body.is-fixed {
 /* galleryセクション */
 .gallery {
   margin-top: 60px;
-  background-color: #fefbfb;
+  background-color: var(--cl-light);
   padding-bottom: 90px;
 }
 @media screen and (min-width: 768px) {
@@ -963,7 +1039,7 @@ body.is-fixed {
 }
 @media screen and (min-width: 768px) {
   .gallery__year-heading {
-    gap: 10px;
+    gap: 7px;
   }
 }
 .gallery__year-heading::before {
@@ -977,8 +1053,8 @@ body.is-fixed {
   height: 10px;
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
-  border-top: 1px solid #000;
-  border-right: 1px solid #000;
+  border-top: 1px solid var(--cl-black);
+  border-right: 1px solid var(--cl-black);
   -webkit-transition: top 0.5s ease, -webkit-transform 0.5s ease;
   transition: top 0.5s ease, -webkit-transform 0.5s ease;
   transition: transform 0.5s ease, top 0.5s ease;

@@ -1,5 +1,6 @@
 @use "sass:map";
 @use "breakpoints";
+@use "fixedvalue";
 
 @mixin mq($breakpoint: sp) {
   @media #{map.get(breakpoints.$breakpoints, $breakpoint)} {
@@ -11,19 +12,86 @@
 :root {
   scroll-behavior: smooth;
   -webkit-tap-highlight-color:rgba(0,0,0,0);
+  --cl-black: #000;
+  --cl-white: #fff;
+  --cl-light: #fefbfb;
+  --cl-hf: #f0fcfa;
+  --cl-bg-sns: #fff;
+  --cl-drawer: #333;
+}
+// ダークモード
+@media (prefers-color-scheme: dark) {
+  :root{
+    --cl-black: #f4f4f4;
+    --cl-white: #383838;
+    --cl-light: #3e3e3e;
+    --cl-hf: #303030;
+    --cl-bg-sns: #e7e7e7;
+    --cl-drawer: #e7e7e7;
+  }
+  img {
+    filter: brightness(95%);
+  }
+  .image-modal__img {
+    img {
+      filter: brightness(98%);
+    }
+  }
 }
 /* フォント */
 body {
   font-family: 'Lora', 'Klee One', serif;
+  color: var(--cl-black);
 
   &.is-fixed {
     overflow: hidden;
   }
 }
+
+.spin {
+  width: 100vw;
+  height: 100vh;
+  transition: all 1s;
+  background-color: var(--cl-light);
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+
+  &.loaded {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+.spin-animation {
+  --size: 50px;
+  --color: currentColor;
+  --animation-timing-function: linear;
+  --animation-duration: 2s;
+  width: var(--size);
+  height: var(--size);
+  mask-image: radial-gradient(circle at 50% 50%, transparent calc(var(--size) / 3), var(--cl-black) calc(var(--size) / 3));
+  background-image: conic-gradient(transparent, transparent 135deg, currentColor);
+  border-radius: 50%;
+  animation: var(--animation-timing-function) var(--animation-duration) infinite circle-spin-animation;
+  position: absolute;
+  top: calc(50% - var(--size) / 2);
+  left: calc(50% - var(--size) / 2);
+}
+@keyframes circle-spin-animation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
 .main {
   &.is-open {
-    opacity: 0.5;
-    transition: opacity 0.5s;
+    opacity: fixedvalue.$opacity;
+    transition: opacity fixedvalue.$transition;
   }
 }
 .hide-sp {
@@ -39,10 +107,10 @@ body {
   }
 }
 #profile {
-  scroll-margin-top: 60px;
+  scroll-margin-top: fixedvalue.$margin-scroll;
 }
 #work {
-  scroll-margin-top: 60px;
+  scroll-margin-top: fixedvalue.$margin-scroll;
 }
 .lb-dataContainer {
   width: 325px !important;
@@ -52,19 +120,19 @@ body {
   display: none !important;
 }
 .section {
-  padding-top: 60px;
-  padding-bottom: 60px;
+  padding-top: fixedvalue.$section-padding-tb;
+  padding-bottom: fixedvalue.$section-padding-tb;
 }
 .section__inner {
   padding-right: 20px;
   padding-left: 20px;
 
   @include mq(pc) {
-    padding-right: 60px;
-    padding-left: 60px;
+    padding-right: fixedvalue.$section-padding-rl;
+    padding-left: fixedvalue.$section-padding-rl;
     margin-right: auto;
     margin-left: auto;
-    max-width: calc(1280px + 60px * 2);
+    max-width: calc(1280px + fixedvalue.$section-padding-rl * 2);
   }
 }
 .section__heading {
@@ -74,7 +142,7 @@ body {
   position: relative;
 
   @include mq(pc) {
-    gap: 10px;
+    gap: 7px;
   }
 }
 .section__heading-icon {
@@ -89,8 +157,8 @@ body {
     margin-top: 3px;
 
     img {
-      width: 28px;
-      height: 28px;
+      width: 29px;
+      height: 29px;
     }
   }
 }
@@ -119,7 +187,7 @@ body {
 
 /* ヘッダー */
 .header {
-  background: #f0fcfa;
+  background-color: var(--cl-hf);
   position: fixed;
   top: 0;
   left: 0;
@@ -129,10 +197,10 @@ body {
   padding-top: 10px;
   padding-bottom: 10px;
   border-bottom: 1px solid rgba(160, 160, 160, 0.7);
-  transition: opacity 0.5s;
+  transition: opacity fixedvalue.$transition;
 
   &.is-open {
-    opacity: 0.5;
+    opacity: fixedvalue.$opacity;
   }
 
   @include mq(pc) {
@@ -149,9 +217,9 @@ body {
   padding-left: 0;
 
   @include mq(pc) {
-    max-width: calc(1280px + 60px * 2);
-    padding-right: 60px;
-    padding-left: 60px;
+    max-width: calc(1280px + fixedvalue.$section-padding-rl * 2);
+    padding-right: fixedvalue.$section-padding-rl;
+    padding-left: fixedvalue.$section-padding-rl;
     margin-right: auto;
     margin-left: auto;
   }
@@ -189,7 +257,7 @@ body {
 }
 .header__nav-link {
   padding: 5px;
-  transition: all 0.3s;
+  transition: all fixedvalue.$transition-all;
   position: relative;
 
   &::after {
@@ -200,7 +268,7 @@ body {
     width: 100%;
     height: 1px;
     background-color: rgba(160, 160, 160, 0.7);
-    transition: all 0.3s;
+    transition: all fixedvalue.$transition-all;
     transform: scale(0, 1);
     transform-origin: center top;
   }
@@ -259,9 +327,9 @@ body {
   width: 100%;
   height: 2px;
   left: 0;
-  background: #333  ;
+  background-color: var(--cl-drawer);
   border-radius: 1px;
-  transition: transform 0.5s, top 0.5s;
+  transition: transform fixedvalue.$transition, top fixedvalue.$transition;
 
   &:nth-child(1) {
     top: 1px;
@@ -279,12 +347,12 @@ body {
   top: -100vh;
   left: 0;
   z-index: 19;
-  background: #fbfffe;
+  background-color: var(--cl-light);
   width: 100%;
   height: calc(100vh - 90px);
   padding-top: 50px;
   padding-bottom: 50px;
-  transition: top 0.5s ease-in-out;
+  transition: top fixedvalue.$transition ease-in-out;
 
   display: flex;
   align-items: center;
@@ -301,7 +369,7 @@ body {
 .drawer-menu-title {
   display: block;
   position: relative;
-  font-size: 23px;
+  font-size: 22px;
   padding-right: 20px;
   padding-left: 20px;
 
@@ -311,7 +379,7 @@ body {
     position: absolute;
     width: 15px;
     height: 1.5px;
-    background: #000;
+    background-color: var(--cl-black);
     border-radius: 1px;
     top: 50%;
     transform: translateY(-50%);
@@ -351,13 +419,14 @@ body {
 /* トップページ */
 /* carousel */
 .carousel {
-  margin-top: calc(90px - 60px);
+  margin-top: calc(90px - fixedvalue.$section-padding-tb);
   height: calc(100vh - 30px);
-  background-color: #fefbfb;
+  background-color: var(--cl-light);
 
   @include mq(pc) {
-    margin-top: calc(105px - 60px);
-    padding: 60px 0;
+    margin-top: calc(105px - fixedvalue.$section-padding-tb);
+    padding-top: fixedvalue.$section-padding-tb;
+    padding-bottom: fixedvalue.$section-padding-tb;
     height: calc(100vh - 45px);
   }
 }
@@ -385,7 +454,7 @@ body {
 
 /* profileセクション */
 .profile {
-  background-color: #fff;
+  background-color: var(--cl-white);
 }
 .profile__content-main {
   @include mq(pc) {
@@ -461,7 +530,7 @@ body {
 }
 .profile__text {
   font-size: 18px;
-  letter-spacing: 0.25px;
+  letter-spacing: 0.1px;
 
   &+& {
     margin-top: 8px;
@@ -513,11 +582,7 @@ body {
 }
 .profile__sns-heading {
   text-align: center;
-  font-size: 20px;
-
-  @include mq(pc) {
-    font-size: 22px;
-  }
+  font-size: 22px;
 }
 .profile__sns-list {
   margin-top: 15px;
@@ -545,21 +610,21 @@ body {
   gap: 10px;
 
   img {
-    width: 32px;
-    height: 32px;
+    width: fixedvalue.$sns-wh;
+    height: fixedvalue.$sns-wh;
     object-fit: contain;
     border: 1px solid rgba(160, 160, 160, 0.5);
     border-radius: 6px;
-    background-color: #fff;
+    background-color: var(--cl-bg-sns);
   }
 }
 .profile__sns-text {
-  font-size: 16px;
+  font-size: 15px;
 }
 
 /* work */
 .work {
-  background-color: #fefbfb;
+  background-color: var(--cl-light);
 }
 .work__list {
   display: flex;
@@ -611,12 +676,12 @@ body {
 .work__btn-link {
   display: inline-block;
   padding: 10px 14px;
-  color: #000;
-  background: #fff;
+  color: var(--cl-black);
+  background-color: var(--cl-white);
   border: 1px solid rgba(100, 100, 100, 0.7);
   border-radius: 8px;
-  font-size: 16px;
-  transition: color 0.5s, background-color 0.5s;
+  font-size: 15px;
+  transition: color fixedvalue.$transition, background-color fixedvalue.$transition;
 
   @include mq(pc) {
     padding: 12px 20px;
@@ -624,7 +689,7 @@ body {
   }
 
   &:hover {
-    color: #fefbfb;
+    color: var(--cl-light);
     background-color: rgba(100, 100, 100, 0.9);
   }
 }
@@ -636,8 +701,8 @@ body {
   top: 0;
   left: 0;
   z-index: 29;
-  background: none;
-  transition: background-color 0.5s;
+  background-color: none;
+  transition: background-color fixedvalue.$transition;
 
   &.is-open {
     width: 100%;
@@ -645,7 +710,7 @@ body {
   }
 
   &.is-active {
-    background: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.7);
   }
 }
 .image-modal {
@@ -657,7 +722,7 @@ body {
   top: 0;
   left: 0;
   padding-top: 50px;
-  background: none;
+  background-color: none;
 
   @include mq(pc) {
   }
@@ -711,7 +776,7 @@ body {
   height: 30px;
   border-radius: 5px;
   cursor: pointer;
-  background: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.7);
 
   &.is-active {
     display: block;
@@ -725,7 +790,7 @@ body {
   width: 100%;
   height: 3px;
   border-radius: 1px;
-  background: #fff;
+  background-color: #e7e7e7;
 
   &:nth-child(1) {
     top: 13px;
@@ -740,7 +805,7 @@ body {
 
 .image-modal__desc {
   margin-top: 10px;
-  color: #fff;
+  color: var(--cl-white);
   font-size: 18px;
 
   @include mq(pc) {
@@ -753,7 +818,7 @@ body {
 /* フッター */
 .footer {
   border-top: 1px solid rgba(160, 160, 160, 0.3);
-  background: #f0fcfa;
+  background-color: var(--cl-hf);
   padding-top: 10px;
   padding-bottom: 10px;
 
@@ -784,12 +849,12 @@ body {
 }
 .footer__list-link {
   img {
-    width: 32px;
-    height: 32px;
+    width: fixedvalue.$sns-wh;
+    height: fixedvalue.$sns-wh;
     object-fit: contain;
     border: 1px solid rgba(160, 160, 160, 0.5);
     border-radius: 5px;
-    background-color: #fff;
+    background-color: var(--cl-bg-sns);
   }
 }
 .footer__copyright {
@@ -807,7 +872,7 @@ body {
 /* galleryセクション */
 .gallery {
   margin-top: calc(90px - 30px);
-  background-color: #fefbfb;
+  background-color: var(--cl-light);
   padding-bottom: 90px;
 
   @include mq(pc) {
@@ -847,7 +912,7 @@ body {
   position: relative;
 
   @include mq(pc) {
-    gap: 10px;
+    gap: 7px;
   }
 
   &::before{
@@ -859,9 +924,9 @@ body {
     width: 10px;
     height: 10px;
     transform: rotate(-45deg);
-    border-top: 1px solid #000;
-    border-right: 1px solid #000;
-    transition: transform 0.5s ease, top 0.5s ease;
+    border-top: 1px solid var(--cl-black);
+    border-right: 1px solid var(--cl-black);
+    transition: transform fixedvalue.$transition ease, top fixedvalue.$transition ease;
   }
 
   &.is-open {
@@ -908,8 +973,8 @@ body {
   padding-left: 20px;
 
   @include mq(pc) {
-    padding-right: 60px;
-    padding-left: 60px;
+    padding-right: fixedvalue.$section-padding-rl;
+    padding-left: fixedvalue.$section-padding-rl;
     margin-top: 10px;
   }
 }
