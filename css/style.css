@@ -7,28 +7,9 @@
   --cl-white: #fff;
   --cl-light: #fefbfb;
   --cl-hf: #f0fcfa;
-  --cl-bg-sns: #fff;
   --cl-drawer: #333;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --cl-black: #f4f4f4;
-    --cl-white: #383838;
-    --cl-light: #3e3e3e;
-    --cl-hf: #303030;
-    --cl-bg-sns: #e7e7e7;
-    --cl-drawer: #e7e7e7;
-  }
-  img {
-    -webkit-filter: brightness(95%);
-            filter: brightness(95%);
-  }
-  .image-modal__img img {
-    -webkit-filter: brightness(98%);
-            filter: brightness(98%);
-  }
-}
 /* フォント */
 body {
   font-family: "Lora", "Klee One", serif;
@@ -717,7 +698,6 @@ body.is-fixed {
      object-fit: contain;
   border: 1px solid rgba(160, 160, 160, 0.5);
   border-radius: 6px;
-  background-color: var(--cl-bg-sns);
 }
 
 .profile__sns-text {
@@ -971,7 +951,6 @@ body.is-fixed {
      object-fit: contain;
   border: 1px solid rgba(160, 160, 160, 0.5);
   border-radius: 5px;
-  background-color: var(--cl-bg-sns);
 }
 
 .footer__copyright {
@@ -1145,4 +1124,25 @@ body.is-fixed {
      object-fit: contain;
   border: 1px solid rgba(160, 160, 160, 0.5);
   border-radius: 8px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --cl-black: #f4f4f4;
+    --cl-white: #383838;
+    --cl-light: #3e3e3e;
+    --cl-hf: #303030;
+    --cl-drawer: #e7e7e7;
+  }
+  img {
+    -webkit-filter: brightness(90%);
+            filter: brightness(90%);
+  }
+  .image-modal__img img {
+    -webkit-filter: brightness(95%);
+            filter: brightness(95%);
+  }
+  .work__btn-link:hover {
+    background-color: var(--cl-drawer);
+  }
 }
