@@ -485,9 +485,11 @@ body.is-fixed {
 .swiper-slide {
   width: 100%;
   height: 100%;
+  text-align: center;
 }
 .swiper-slide img {
   width: 100%;
+  max-width: 768px;
   display: inline-block;
   vertical-align: bottom;
   -o-object-fit: contain;
